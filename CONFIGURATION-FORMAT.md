@@ -59,7 +59,7 @@ Lower default priority = preferred first. An explicit `priority` value in the JS
 
 ### JSON Example
 
-See [Config/SMBConnectSetup-EXAMPLE.json](../Config/SMBConnectSetup-EXAMPLE.json) and [Config/SMBConnectSetup-DEMO-SIX-SERVERS.json](../Config/SMBConnectSetup-DEMO-SIX-SERVERS.json).
+See [examples/SMBConnectSetup-DEMO-SIX-SERVERS.json](../examples/SMBConnectSetup-DEMO-SIX-SERVERS.json).
 
 Minimal valid structure:
 
@@ -111,20 +111,18 @@ If `fallbackIP` and `fallbackSpeed` are both blank, the generated share will con
 
 Example input files:
 
-- [server-shares-example.csv](../scripts/examples/server-shares-example.csv)
-- [server-shares-example.txt](../scripts/examples/server-shares-example.txt)
+- [server-shares-example.csv](../examples/server-shares-example.csv)
+- [server-shares-example.txt](../examples/server-shares-example.txt)
 
 Full generator usage details are documented in:
 
-- [scripts/README-config-generator.md](../scripts/README-config-generator.md)
+- [README-config-generator.md](../README-config-generator.md)
 
 ---
 
 ## MDM Profile Format
 
 MDM delivers preferences as a macOS configuration profile. The app reads managed values from `UserDefaults` forced preferences via `com.matx.SMBConnect`.
-
-See [Config/com.matx.SMBConnect.mobileconfig](../Config/com.matx.SMBConnect.mobileconfig).
 
 ### Top-Level MDM Keys
 

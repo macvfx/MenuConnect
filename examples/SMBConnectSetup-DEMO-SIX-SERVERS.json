@@ -1,0 +1,148 @@
+{
+  "configDate" : "20260419",
+  "shares" : [
+    {
+      "alias" : "AVID Nexis",
+      "connectionProtocol" : "smb",
+      "shareName" : "Media",
+      "mountName" : "Media",
+      "defaultUsername" : "vfxuser",
+      "endpoints" : [
+        {
+          "serverIP" : "10.10.10.101",
+          "networkType" : "10gbe",
+          "priority" : 0,
+          "subnetPrefix" : 24,
+          "label" : "Preferred 10GbE Network"
+        },
+        {
+          "serverIP" : "192.168.50.101",
+          "networkType" : "1gbe",
+          "priority" : 10,
+          "subnetPrefix" : 24,
+          "label" : "Fallback 1GbE Network"
+        }
+      ],
+      "note" : "Demo share with preferred 10GbE and fallback 1GbE. Save the user password in Keychain after import.",
+      "source" : "imported"
+    },
+    {
+      "alias" : "Edit Share",
+      "connectionProtocol" : "smb",
+      "shareName" : "Edit",
+      "mountName" : "Edit",
+      "defaultUsername" : "edituser",
+      "endpoints" : [
+        {
+          "serverIP" : "10.10.10.102",
+          "networkType" : "10gbe",
+          "priority" : 0,
+          "subnetPrefix" : 24,
+          "label" : "Preferred 10GbE Network"
+        },
+        {
+          "serverIP" : "192.168.50.102",
+          "networkType" : "1gbe",
+          "priority" : 10,
+          "subnetPrefix" : 24,
+          "label" : "Fallback 1GbE Network"
+        }
+      ],
+      "note" : "Demo editing share. Password is intentionally not stored in JSON.",
+      "source" : "imported"
+    },
+    {
+      "alias" : "Graphics NAS",
+      "connectionProtocol" : "smb",
+      "shareName" : "Graphics",
+      "mountName" : "Graphics",
+      "defaultUsername" : "designer",
+      "endpoints" : [
+        {
+          "serverIP" : "10.10.10.103",
+          "networkType" : "25gbe",
+          "priority" : 0,
+          "subnetPrefix" : 24,
+          "label" : "Preferred 25GbE Network"
+        },
+        {
+          "serverIP" : "192.168.50.103",
+          "networkType" : "1gbe",
+          "priority" : 10,
+          "subnetPrefix" : 24,
+          "label" : "Fallback 1GbE Network"
+        }
+      ],
+      "note" : "Demo graphics share to show a faster preferred network speed.",
+      "source" : "imported"
+    },
+    {
+      "alias" : "Archive NAS",
+      "connectionProtocol" : "smb",
+      "shareName" : "Archive",
+      "mountName" : "Archive",
+      "defaultUsername" : "archiveuser",
+      "endpoints" : [
+        {
+          "serverIP" : "172.20.30.104",
+          "networkType" : "1gbe",
+          "priority" : 0,
+          "subnetPrefix" : 24,
+          "label" : "Preferred 1GbE Network"
+        }
+      ],
+      "note" : "Single-path demo share on 1GbE only.",
+      "source" : "imported"
+    },
+    {
+      "alias" : "VFX Cache",
+      "connectionProtocol" : "smb",
+      "shareName" : "VFXCache",
+      "mountName" : "VFXCache",
+      "defaultUsername" : "vfxuser",
+      "endpoints" : [
+        {
+          "serverIP" : "10.10.10.105",
+          "networkType" : "100gbe",
+          "priority" : 0,
+          "subnetPrefix" : 24,
+          "label" : "Preferred 100GbE Network"
+        },
+        {
+          "serverIP" : "192.168.50.105",
+          "networkType" : "10gbe",
+          "priority" : 10,
+          "subnetPrefix" : 24,
+          "label" : "Fallback 10GbE Network"
+        }
+      ],
+      "note" : "Demo VFX cache share to show a very fast preferred network path.",
+      "source" : "imported"
+    },
+    {
+      "alias" : "Producer Drop",
+      "connectionProtocol" : "smb",
+      "shareName" : "Deliveries",
+      "mountName" : "Deliveries",
+      "defaultUsername" : "producer",
+      "endpoints" : [
+        {
+          "serverIP" : "10.10.10.106",
+          "networkType" : "10gbe",
+          "priority" : 0,
+          "subnetPrefix" : 24,
+          "label" : "Preferred 10GbE Network"
+        },
+        {
+          "serverIP" : "192.168.50.106",
+          "networkType" : "1gbe",
+          "priority" : 10,
+          "subnetPrefix" : 24,
+          "label" : "Fallback 1GbE Network"
+        }
+      ],
+      "note" : "Demo producer deliveries share. Save a password locally in Keychain after import.",
+      "source" : "imported"
+    }
+  ]
+}

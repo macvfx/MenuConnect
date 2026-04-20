@@ -1,0 +1,5 @@
+# Comma-separated text file.
+# Header is optional. Blank lines and comment lines are ignored.
+archives,smb,Archives,Archives,archivist,Primary archive share for editors,10.0.1.1,10g,192.168.1.1,1g
+outputs,smb,Exports,Exports,nle,Daily export volume,10.0.0.2,10gbe,192.168.1.2,1gbe
+camera,smb,Camera,Camera,media.ops,Single endpoint example,10.0.0.4,10g,,

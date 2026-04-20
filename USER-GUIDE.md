@@ -216,7 +216,7 @@ Passwords are not exported.
 
 If you need to create a valid setup JSON file and a matching MDM `.mobileconfig` from a server list, the repo includes a helper script:
 
-- [generate_smbconnect_config.sh](../scripts/generate_smbconnect_config.sh)
+- `generate_smbconnect_config.sh`
 
 It accepts a comma-separated `.csv` or `.txt` file using:
 
@@ -228,7 +228,7 @@ and generates both output formats for SMB Connect.
 
 Examples and usage details are here:
 
-- [Config Generator README](../scripts/README-config-generator.md)
+- README-config-generator.md
 
 ### Share Settings
 
@@ -245,7 +245,7 @@ Fields:
 - `Protocol`
   Currently `smb`.
 - `Share Name`
-  The SMB share path, such as `Outputs` in `smb://server/Outputs`.
+  The SMB share path, such as `Video` in `smb://server/Video`.
 - `Mount Name`
   The volume name expected in `/Volumes` after the share is mounted.
 - `Default Username`
@@ -321,12 +321,6 @@ JSON can define:
 
 Passwords are intentionally omitted.
 
-See:
-
-- [Configuration Format](CONFIGURATION-FORMAT.md)
-- [SMBConnectSetup-EXAMPLE.json](../Config/SMBConnectSetup-EXAMPLE.json)
-- [SMBConnectSetup-DEMO-SIX-SERVERS.json](../Config/SMBConnectSetup-DEMO-SIX-SERVERS.json)
-
 ## MDM Profile Configuration
 
 SMB Connect also supports an MDM profile that preloads managed share definitions.
@@ -341,10 +335,6 @@ This is useful when IT wants to push:
 - default usernames
 
 The user can still enter and store their own password locally in Keychain.
-
-See:
-
-- [com.matx.SMBConnect.mobileconfig](../Config/com.matx.SMBConnect.mobileconfig)
 
 ## Recommended Admin Workflow
 

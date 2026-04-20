@@ -37,44 +37,11 @@ Configuration is layered in this order:
 MDM and JSON can preload share names, IPs, preferred network order, and default usernames.
 Passwords are intentionally user-local and are not stored in JSON or MDM.
 
-## Build And Run
-
-```bash
-xcodegen generate
-./script/build_and_run.sh
-```
-
-The script detects a valid `Apple Development` certificate in your Keychain and passes the corresponding team ID to `xcodebuild`. Hardened runtime requires a real signing identity, so a developer certificate enrolled in the Apple Developer Program is needed. If no certificate is found the script falls back to an unsigned build (suitable for quick compile checks only — the app will not launch due to hardened runtime restrictions).
-
-To enrol: open Xcode → Preferences → Accounts → add your Apple ID → download certificates. Then re-run the script.
-
-For a quick local verification:
-
-```bash
-./script/build_and_run.sh --verify
-```
-
 ## Included Example Configuration
 
-The repo includes sample configuration files in [Config](</Users/xavier/Downloads/All Code Projects/SMB Connect/Config>):
-
-- [SMBConnectSetup-EXAMPLE.json](/Users/xavier/Downloads/All%20Code%20Projects/SMB%20Connect/Config/SMBConnectSetup-EXAMPLE.json:1)
-- [SMBConnectSetup-AVNAS.json](/Users/xavier/Downloads/All%20Code%20Projects/SMB%20Connect/Config/SMBConnectSetup-AVNAS.json:1)
-- [SMBConnectSetup-DEMO-SIX-SERVERS.json](/Users/xavier/Downloads/All%20Code%20Projects/SMB%20Connect/Config/SMBConnectSetup-DEMO-SIX-SERVERS.json:1)
-- [com.matx.SMBConnect.mobileconfig](/Users/xavier/Downloads/All%20Code%20Projects/SMB%20Connect/Config/com.matx.SMBConnect.mobileconfig:1)
-
+The repo includes sample configuration files in 
 If you want to generate valid SMB Connect setup JSON and matching `.mobileconfig` profiles from a comma-separated `.csv` or `.txt` list, use:
 
-- [scripts/generate_smbconnect_config.sh](/Users/xavier/Downloads/All%20Code%20Projects/SMB%20Connect/scripts/generate_smbconnect_config.sh:1)
+- [scripts/generate_smbconnect_config.sh]
+Usage details and sample input files are documented in the script read me
 
-Usage details and sample input files are documented in:
-
-- [scripts/README-config-generator.md](/Users/xavier/Downloads/All%20Code%20Projects/SMB%20Connect/scripts/README-config-generator.md:1)
-
-## Documentation
-
-- [User Guide](docs/USER-GUIDE.md)
-- [Configuration Format](docs/CONFIGURATION-FORMAT.md)
-- [Config Generator README](scripts/README-config-generator.md)
-- [Implementation Plan](docs/IMPLEMENTATION-PLAN.md)
-- [Duplicate Mount Repair Plan](docs/DUPLICATE-MOUNT-REPAIR-PLAN.md)

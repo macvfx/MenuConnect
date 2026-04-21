@@ -59,7 +59,7 @@ Lower default priority = preferred first. An explicit `priority` value in the JS
 
 ### JSON Example
 
-See [examples/SMBConnectSetup-DEMO-SIX-SERVERS.json](../examples/SMBConnectSetup-DEMO-SIX-SERVERS.json).
+See examples folder.
 
 Minimal valid structure:
 

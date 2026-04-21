@@ -99,7 +99,7 @@ Minimal valid structure:
 
 If you want to build a valid SMB Connect setup JSON file and matching `.mobileconfig` profile from a comma-separated server list, use:
 
-- [generate_smbconnect_config.sh](../generate_smbconnect_config.sh)
+- [generate_smbconnect_config.sh](generate_smbconnect_config.sh)
 
 The generator accepts `.csv` and `.txt` inputs using this 10-column format:
 
@@ -111,12 +111,12 @@ If `fallbackIP` and `fallbackSpeed` are both blank, the generated share will con
 
 Example input files:
 
-- [server-shares-example.csv](../examples/server-shares-example.csv)
-- [server-shares-example.txt](../examples/server-shares-example.txt)
+- [server-shares-example.csv](examples/server-shares-example.csv)
+- [server-shares-example.txt](examples/server-shares-example.txt)
 
 Full generator usage details are documented in:
 
-- [README-config-generator.md](../README-config-generator.md)
+- [README-config-generator.md](README-config-generator.md)
 
 ---
 

@@ -42,6 +42,15 @@ Passwords are intentionally user-local and are not stored in JSON or MDM.
 The repo includes sample configuration files in 
 If you want to generate valid SMB Connect setup JSON and matching `.mobileconfig` profiles from a comma-separated `.csv` or `.txt` list, use:
 
-- [generate_smbconnect_config.sh]
+- `generate_smbconnect_config.sh`
+- 
 Usage details and sample input files are documented in the script read me
 
+The script is here:
+
+- [generate_smbconnect_config.sh](generate_smbconnect_config.sh)
+
+Example inputs are here:
+
+- [server-shares-example.csv](examples/server-shares-example.csv)
+- [server-shares-example.txt](examples/server-shares-example.txt)

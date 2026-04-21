@@ -99,7 +99,7 @@ Minimal valid structure:
 
 If you want to build a valid SMB Connect setup JSON file and matching `.mobileconfig` profile from a comma-separated server list, use:
 
-- [generate_smbconnect_config.sh](../scripts/generate_smbconnect_config.sh)
+- [generate_smbconnect_config.sh](../generate_smbconnect_config.sh)
 
 The generator accepts `.csv` and `.txt` inputs using this 10-column format:
 

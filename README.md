@@ -43,7 +43,7 @@ The repo includes sample configuration files in
 If you want to generate valid SMB Connect setup JSON and matching `.mobileconfig` profiles from a comma-separated `.csv` or `.txt` list, use:
 
 - `generate_smbconnect_config.sh`
-- 
+  
 Usage details and sample input files are documented in the script read me
 
 The script is here:

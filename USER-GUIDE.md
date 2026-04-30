@@ -22,7 +22,7 @@ The popover shows:
 - a top banner with current active wired network information
 - a `Connection Summary` section
 - a `Shares` section with one status card per configured share
-- `Refresh`, `Settings`, and `Quit` actions at the bottom
+- `Refresh`, `Connect All`, `Settings`, and `Quit` actions at the bottom
 
 ### 2. Read The Connection Summary
 
@@ -89,6 +89,14 @@ This shows the current or selected network speed for that share, for example:
 - `10GbE`
 - `25GbE`
 - `100GbE`
+
+### 5. Use Connect All
+
+The `Connect All` button (`⌘K`) in the footer connects every share that is currently in a ready state — meaning the preferred or fallback network path is reachable and credentials are saved in Keychain.
+
+It is disabled when no shares are connectable (for example, when all shares are already mounted or no network paths are active).
+
+Shares with missing credentials, name conflicts, or duplicate mounts are skipped and must be resolved individually.
 
 ## What The Main States Mean
 
@@ -193,8 +201,15 @@ The `Shares` list shows each configured share alias, source, and preferred netwo
 This contains:
 
 - `Launch at login`
+- `Connect all shares on start`
 - `Setup Folder`
 - `Refresh Status`
+
+`Launch at login` registers the app with macOS to open automatically when the user logs in.
+
+`Connect all shares on start` automatically connects every share that is in a ready state after the app finishes its first status check on launch. This works the same as pressing `Connect All` manually — only shares with saved credentials and a reachable network path are attempted. Shares with issues are skipped.
+
+Pairing `Launch at login` with `Connect all shares on start` gives a fully automatic mount experience: the app opens at login and connects all ready shares without any user interaction.
 
 `Setup Folder` is where the app looks for setup JSON files on startup and refresh:
 
@@ -216,7 +231,7 @@ Passwords are not exported.
 
 If you need to create a valid setup JSON file and a matching MDM `.mobileconfig` from a server list, the repo includes a helper script:
 
-- `generate_smbconnect_config.sh`
+- [generate_smbconnect_config.sh](generate_smbconnect_config.sh)
 
 It accepts a comma-separated `.csv` or `.txt` file using:
 
@@ -228,7 +243,7 @@ and generates both output formats for SMB Connect.
 
 Examples and usage details are here:
 
-- README-config-generator.md
+- [Config Generator README](README-config-generator.md)
 
 ### Share Settings
 
@@ -245,7 +260,7 @@ Fields:
 - `Protocol`
   Currently `smb`.
 - `Share Name`
-  The SMB share path, such as `Video` in `smb://server/Video`.
+  The SMB share path, such as `Outputs` in `smb://server/Video`.
 - `Mount Name`
   The volume name expected in `/Volumes` after the share is mounted.
 - `Default Username`
@@ -350,8 +365,10 @@ The user can still enter and store their own password locally in Keychain.
 2. Open `Settings…` if a share shows `Complete Setup`.
 3. Save your username and password in the `Credentials` section.
 4. Return to the menu bar app.
-5. Connect to the desired share.
+5. Press `Connect All` to mount all ready shares in one action, or connect individual shares as needed.
 6. If warned about duplicate mounts or `/Volumes` conflicts, resolve those before editing media.
+
+To connect automatically on every login, enable both `Launch at login` and `Connect all shares on start` in Settings → General.
 
 ## Troubleshooting
 

@@ -1,18 +1,13 @@
 # SMB Connect
 
-`v0.4.0` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
+`v0.4.1` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
 
 SMB Connect is a macOS menu bar app for mounting SMB shares with awareness of preferred and fallback network paths such as `10GbE`, `1GbE`, `25GbE`, and `100GbE`.
 
 It is designed for environments where users regularly connect to multiple storage targets and need the app to:
 
-- show whether each share is mounted
-- prefer the fastest configured network path when available
-- fall back cleanly to a slower path when needed
-- keep passwords in the user’s Keychain
-- support both JSON-based setup and MDM-managed deployment
-- warn about duplicate mounts and `/Volumes` naming conflicts before they create `-1` mount paths
-- *NEW* connect all ready shares in one click or automatically on app start
+- *NEW* v0.4.0 can connect all ready shares in one click or automatically on app start
+- *FIXED* v0.4.1 fixes the SMB Connect Settings window so it reliably comes to the front when opened from the menu bar app.
 
 ## What The App Does
 

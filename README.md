@@ -52,6 +52,9 @@ External inventory handoff files are here:
 - [DEVICE-INVENTORY-TEMPLATE.md](DEVICE-INVENTORY-TEMPLATE.md)
 - [device-inventory-template.csv](examples/device-inventory-template.csv)
 - [device-inventory-example.csv](examples/device-inventory-example.csv)
+- [SITE-DEVICE-LIST-TEMPLATE.md](SITE-DEVICE-LIST-TEMPLATE.md)
+- [site-device-list-template.csv](examples/site-device-list-template.csv)
+- [site-device-list-example.csv](examples/site-device-list-example.csv)
 
 Additional sample inputs are here:
 

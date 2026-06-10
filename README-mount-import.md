@@ -44,6 +44,29 @@ That writes:
 - `generated/SMBConnectSetup-FromMounts.json`
 - `generated/SMBConnectSetup-FromMounts.report.txt`
 
+## Directly From `mount`
+
+On a Mac with the shares currently mounted, you can pipe `mount` directly into the tool:
+
+```bash
+mount | ./mount_to_smbconnect_config.sh \
+  -o ./generated/SMBConnectSetup-FromMounts.json \
+  --non-interactive \
+  --default-speed custom
+```
+
+Use `--ip-speed IP=SPEED` to label known paths in the same command:
+
+```bash
+mount | ./mount_to_smbconnect_config.sh \
+  -o ./generated/SMBConnectSetup-FromMounts.json \
+  --ip-speed 192.0.2.20=10g \
+  --ip-speed 198.51.100.20=1g \
+  --non-interactive
+```
+
+If you want the script to prompt for speeds, omit `--non-interactive`. When input is piped from `mount`, prompts are read from the terminal instead of from the pipe.
+
 ## Preferred And Fallback Paths
 
 SMB Connect needs endpoint speeds so it can choose preferred and fallback paths. The script supports two modes:

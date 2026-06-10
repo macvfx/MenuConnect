@@ -38,7 +38,10 @@ Examples:
     --ip-speed 198.51.100.20=1g \
     --ip-speed 203.0.113.22=custom
 
-  mount | ./scripts/mount_to_smbconnect_config.sh --non-interactive > SMBConnectSetup-FromMounts.json
+  mount | ./scripts/mount_to_smbconnect_config.sh \
+    -o ./Config/generated/SMBConnectSetup-FromMounts.json \
+    --non-interactive \
+    --default-speed custom
 EOF
 }
 
@@ -174,7 +177,15 @@ speed_for_ip() {
   local answer
   while true; do
     printf 'Network speed for server IP %s [%s]: ' "$ip" "$(speed_display "$DEFAULT_SPEED")" >&2
-    IFS= read -r answer
+    if [[ "$INPUT_FILE" == "/dev/stdin" && -r /dev/tty ]]; then
+      IFS= read -r answer </dev/tty
+    elif [[ "$INPUT_FILE" == "/dev/stdin" ]]; then
+      echo "Cannot prompt for network speeds while reading mount output from stdin without a terminal." >&2
+      echo "Use --non-interactive with --default-speed, or save mount output to a file and pass -i FILE." >&2
+      exit 1
+    else
+      IFS= read -r answer
+    fi
     answer="$(trim "$answer")"
     [[ -n "$answer" ]] || answer="$DEFAULT_SPEED"
     if speed="$(normalize_speed "$answer" 2>/dev/null)"; then

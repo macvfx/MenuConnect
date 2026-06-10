@@ -37,18 +37,23 @@ Passwords are intentionally user-local and are not stored in JSON or MDM.
 
 ## Included Example Configuration
 
-The repo includes sample configuration files in 
-If you want to generate valid SMB Connect setup JSON and matching `.mobileconfig` profiles from a comma-separated `.csv` or `.txt` list, use:
+This repo includes public sample inputs and a generator for creating valid SMB Connect setup JSON and matching `.mobileconfig` profiles.
 
-- `generate_smbconnect_config.sh`
-  
-Usage details and sample input files are documented in the script read me
-
-The script is here:
+The generator script is here:
 
 - [generate_smbconnect_config.sh](generate_smbconnect_config.sh)
 
-Example inputs are here:
+Generator usage is documented here:
+
+- [README-config-generator.md](README-config-generator.md)
+
+External inventory handoff files are here:
+
+- [DEVICE-INVENTORY-TEMPLATE.md](DEVICE-INVENTORY-TEMPLATE.md)
+- [device-inventory-template.csv](examples/device-inventory-template.csv)
+- [device-inventory-example.csv](examples/device-inventory-example.csv)
+
+Additional sample inputs are here:
 
 - [server-shares-example.csv](examples/server-shares-example.csv)
 - [server-shares-example.txt](examples/server-shares-example.txt)

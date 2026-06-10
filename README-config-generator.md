@@ -13,6 +13,8 @@ Example inputs are here:
 
 - [server-shares-example.csv](examples/server-shares-example.csv)
 - [server-shares-example.txt](examples/server-shares-example.txt)
+- [device-inventory-template.csv](examples/device-inventory-template.csv)
+- [device-inventory-example.csv](examples/device-inventory-example.csv)
 
 ## Input format
 
@@ -40,22 +42,24 @@ A header row is optional.
 
 If both fallback columns are blank, the script creates a single-endpoint share and treats the listed IP as the preferred endpoint by default.
 
+For a handoff-friendly inventory sheet, use [device-inventory-template.csv](examples/device-inventory-template.csv). It uses the same 10-column format with labels that make the preferred `10GbE` and fallback `1GbE` paths clear to the person filling it out. See [Device Inventory Template For SMB Connect](DEVICE-INVENTORY-TEMPLATE.md) for guidance.
+
 ## Usage
 
 From the repo root:
 
 ```bash
-chmod +x ./scripts/generate_smbconnect_config.sh
-./scripts/generate_smbconnect_config.sh \
-  -i ./scripts/examples/server-shares-example.csv \
-  -o ./Config/generated/SMBConnectSetup-Team
+chmod +x ./generate_smbconnect_config.sh
+./generate_smbconnect_config.sh \
+  -i ./examples/server-shares-example.csv \
+  -o ./generated/SMBConnectSetup-Team
 ```
 
 That produces:
 
 ```text
-./Config/generated/SMBConnectSetup-Team.json
-./Config/generated/SMBConnectSetup-Team.mobileconfig
+./generated/SMBConnectSetup-Team.json
+./generated/SMBConnectSetup-Team.mobileconfig
 ```
 
 ## Optional flags
@@ -70,9 +74,9 @@ That produces:
 Example:
 
 ```bash
-./scripts/generate_smbconnect_config.sh \
-  -i ./scripts/examples/server-shares-example.txt \
-  -o ./Config/generated/SMBConnectSetup-Studios \
+./generate_smbconnect_config.sh \
+  -i ./examples/server-shares-example.txt \
+  -o ./generated/SMBConnectSetup-Studios \
   --config-date 20260420 \
   --organization "Matx" \
   --identifier-prefix com.matx.SMBConnect \

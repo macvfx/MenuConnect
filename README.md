@@ -42,10 +42,12 @@ This repo includes public sample inputs and a generator for creating valid SMB C
 The generator script is here:
 
 - [generate_smbconnect_config.sh](generate_smbconnect_config.sh)
+- [mount_to_smbconnect_config.sh](mount_to_smbconnect_config.sh)
 
 Generator usage is documented here:
 
 - [README-config-generator.md](README-config-generator.md)
+- [README-mount-import.md](README-mount-import.md)
 
 External inventory handoff files are here:
 
@@ -60,3 +62,4 @@ Additional sample inputs are here:
 
 - [server-shares-example.csv](examples/server-shares-example.csv)
 - [server-shares-example.txt](examples/server-shares-example.txt)
+- [mount-output-example.txt](examples/mount-output-example.txt)

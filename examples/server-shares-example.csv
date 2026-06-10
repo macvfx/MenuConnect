@@ -1,5 +1,5 @@
 server alias,protocol,share name,mount name,user name,note,preferred ip,speed preferred,fallback ip,speed fallback
-archives,smb,Archives,Archives,archivist,Primary archive share for editors,10.0.1.1,10g,192.168.1.1,1g
-outputs,smb,exports,exports,nle,Daily exports volume,10.0.0.2,10gbe,192.168.1.2,1gbe
-vault,smb,Vault,Vault,post.team,"Quoted notes work, too",10.0.0.3,25g,192.168.1.3,1g
-camera,smb,Archives,Archives,media.ops,Single endpoint example,10.0.0.4,10g,,
+archives,smb,Archives,Archives,archivist,Primary archive share for editors,192.0.2.1,10g,198.51.100.1,1g
+outputs,smb,exports,exports,nle,Daily exports volume,192.0.2.2,10gbe,198.51.100.2,1gbe
+vault,smb,Vault,Vault,post.team,"Quoted notes work, too",192.0.2.3,25g,198.51.100.3,1g
+camera,smb,Archives,Archives,media.ops,Single endpoint example,192.0.2.4,10g,,

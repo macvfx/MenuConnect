@@ -30,6 +30,12 @@ Use one row for each useful server/device pairing at a site. If one storage serv
 
 See [site-device-list-example.csv](examples/site-device-list-example.csv) for filled examples.
 
+The examples use documentation-only IP ranges:
+
+- `192.0.2.0/24` for example 10GbE paths
+- `198.51.100.0/24` for example 1GbE paths
+- `203.0.113.0/24` for example VPN, WireGuard, Tailscale, or custom-speed paths
+
 ## Turning This Into SMB Connect Config
 
 For SMB Connect imports, each SMB share becomes a row in [device-inventory-template.csv](examples/device-inventory-template.csv).

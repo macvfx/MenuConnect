@@ -27,7 +27,7 @@ alias,protocol,shareName,mountName,defaultUsername,note,preferredIP,preferredSpe
 Example:
 
 ```text
-archives,smb,Archives,Archives,Archives.archivist,Primary archive share for editors,10.0.1.1,10g,192.168.1.1,1g
+archives,smb,Archives,Archives,Archives.archivist,Primary archive share for editors,192.0.2.1,10g,198.51.100.1,1g
 ```
 
 ## Accepted values

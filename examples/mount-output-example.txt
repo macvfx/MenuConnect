@@ -1,0 +1,4 @@
+//user@192.0.2.20/Archives on /Volumes/Archives (smbfs, nodev, nosuid, mounted by user)
+//user@198.51.100.20/Archives on /Volumes/Archives-1 (smbfs, nodev, nosuid, mounted by user)
+//user@192.0.2.21/Exports on /Volumes/Exports (smbfs, nodev, nosuid, mounted by user)
+//user@203.0.113.22/CameraArchives on /Volumes/CameraArchives (smbfs, nodev, nosuid, mounted by user)

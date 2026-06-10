@@ -1,4 +1,4 @@
 server alias,protocol,share name,mount name,user name,note,10GbE IP,speed preferred,1GbE IP,speed fallback
-edit-archive,smb,Archives,Archives,editors,"Edit NAS, rack A3, preferred 10GbE with 1GbE fallback",10.10.1.20,10g,192.168.1.20,1g
-exports-nas,smb,Exports,Exports,nle,"Exports NAS, machine room, preferred 10GbE with 1GbE fallback",10.10.1.21,10gbe,192.168.1.21,1gbe
-camera-vault,smb,CameraArchives,CameraArchives,media.ops,"Camera archive server, no 1GbE fallback configured",10.10.1.22,10g,,
+edit-archive,smb,Archives,Archives,editors,"Edit NAS, rack A3, preferred 10GbE with 1GbE fallback",192.0.2.20,10g,198.51.100.20,1g
+exports-nas,smb,Exports,Exports,nle,"Exports NAS, machine room, preferred 10GbE with 1GbE fallback",192.0.2.21,10gbe,198.51.100.21,1gbe
+camera-vault,smb,CameraArchives,CameraArchives,media.ops,"Camera archive server, no 1GbE fallback configured",192.0.2.22,10g,,

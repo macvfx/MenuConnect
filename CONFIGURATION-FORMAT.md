@@ -75,14 +75,14 @@ Minimal valid structure:
       "defaultUsername": "user",
       "endpoints": [
         {
-          "serverIP": "10.0.0.1",
+          "serverIP": "192.0.2.1",
           "networkType": "10gbe",
           "priority": 0,
           "subnetPrefix": 24,
           "label": "Primary 10GbE"
         },
         {
-          "serverIP": "192.168.10.245",
+          "serverIP": "198.51.100.245",
           "networkType": "1gbe",
           "priority": 10,
           "subnetPrefix": 24,
@@ -168,14 +168,14 @@ MDM delivers preferences as a macOS configuration profile. The app reads managed
     <key>endpoints</key>
     <array>
       <dict>
-        <key>serverIP</key>     <string>10.0.0.1</string>
+        <key>serverIP</key>     <string>192.0.2.1</string>
         <key>networkType</key>  <string>10gbe</string>
         <key>priority</key>     <integer>0</integer>
         <key>subnetPrefix</key> <integer>24</integer>
         <key>label</key>        <string>Preferred 10GbE</string>
       </dict>
       <dict>
-        <key>serverIP</key>     <string>192.168.10.245</string>
+        <key>serverIP</key>     <string>198.51.100.245</string>
         <key>networkType</key>  <string>1gbe</string>
         <key>priority</key>     <integer>10</integer>
         <key>subnetPrefix</key> <integer>24</integer>

@@ -9,14 +9,14 @@
       "defaultUsername" : "vfxuser",
       "endpoints" : [
         {
-          "serverIP" : "10.10.10.101",
+          "serverIP" : "192.0.2.101",
           "networkType" : "10gbe",
           "priority" : 0,
           "subnetPrefix" : 24,
           "label" : "Preferred 10GbE Network"
         },
         {
-          "serverIP" : "192.168.50.101",
+          "serverIP" : "198.51.100.101",
           "networkType" : "1gbe",
           "priority" : 10,
           "subnetPrefix" : 24,
@@ -34,14 +34,14 @@
       "defaultUsername" : "edituser",
       "endpoints" : [
         {
-          "serverIP" : "10.10.10.102",
+          "serverIP" : "192.0.2.102",
           "networkType" : "10gbe",
           "priority" : 0,
           "subnetPrefix" : 24,
           "label" : "Preferred 10GbE Network"
         },
         {
-          "serverIP" : "192.168.50.102",
+          "serverIP" : "198.51.100.102",
           "networkType" : "1gbe",
           "priority" : 10,
           "subnetPrefix" : 24,
@@ -59,14 +59,14 @@
       "defaultUsername" : "designer",
       "endpoints" : [
         {
-          "serverIP" : "10.10.10.103",
+          "serverIP" : "192.0.2.103",
           "networkType" : "25gbe",
           "priority" : 0,
           "subnetPrefix" : 24,
           "label" : "Preferred 25GbE Network"
         },
         {
-          "serverIP" : "192.168.50.103",
+          "serverIP" : "198.51.100.103",
           "networkType" : "1gbe",
           "priority" : 10,
           "subnetPrefix" : 24,
@@ -102,14 +102,14 @@
       "defaultUsername" : "vfxuser",
       "endpoints" : [
         {
-          "serverIP" : "10.10.10.105",
+          "serverIP" : "192.0.2.105",
           "networkType" : "100gbe",
           "priority" : 0,
           "subnetPrefix" : 24,
           "label" : "Preferred 100GbE Network"
         },
         {
-          "serverIP" : "192.168.50.105",
+          "serverIP" : "198.51.100.105",
           "networkType" : "10gbe",
           "priority" : 10,
           "subnetPrefix" : 24,
@@ -127,14 +127,14 @@
       "defaultUsername" : "producer",
       "endpoints" : [
         {
-          "serverIP" : "10.10.10.106",
+          "serverIP" : "192.0.2.106",
           "networkType" : "10gbe",
           "priority" : 0,
           "subnetPrefix" : 24,
           "label" : "Preferred 10GbE Network"
         },
         {
-          "serverIP" : "192.168.50.106",
+          "serverIP" : "198.51.100.106",
           "networkType" : "1gbe",
           "priority" : 10,
           "subnetPrefix" : 24,

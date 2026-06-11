@@ -49,7 +49,7 @@ Generator usage is documented here:
 - [README-config-generator.md](README-config-generator.md)
 - [README-mount-import.md](README-mount-import.md)
 
-The private SMB Connect repository also includes a small macOS SwiftUI companion app named Mount Import Assistant for the same mounted-share import workflow. This public repo intentionally publishes only the portable shell scripts, docs, templates, and examples.
+*EXTRA:* a small macOS SwiftUI companion app named **Mount Import Assistant** for the same mounted-share import workflow. Use the app or the portable shell scripts. 
 
 External inventory handoff files are here:
 

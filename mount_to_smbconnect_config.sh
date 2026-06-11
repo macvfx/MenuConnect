@@ -347,6 +347,7 @@ for group_key in "${GROUP_KEYS[@]}"; do
   fi
   if (( ${#group_suffixes[@]} > 0 )); then
     report+=$'\n'"WARNING: ${share_name} has Finder-style duplicate mount path(s): ${group_suffixes[*]}."
+    report+=$'\n'"ACTION: ${share_name} duplicate suffix mounts are treated as broken extra mounts and grouped under base mount name ${mount_name}."
   fi
   if (( ${#group_volumes[@]} > 1 )); then
     report+=$'\n'"WARNING: ${share_name} appears as multiple mounted volume names: ${group_volumes[*]}."

@@ -2,7 +2,7 @@
 
 `v0.5.1` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
 
-SMB Connect is a macOS menu bar app for mounting SMB shares with awareness of preferred and fallback network paths such as `10GbE`, `1GbE`, `25GbE`, and `100GbE`.
+SMB Connect is a macOS menu bar app for mounting SMB shares with awareness of preferred, fallback, and remote-reachability network paths such as `10GbE`, `1GbE`, `25GbE`, `100GbE`, and VPN/custom endpoints.
 
 It is designed for environments where users regularly connect to multiple storage targets and need the app to:
 
@@ -52,6 +52,8 @@ Generator usage is documented here:
 - [README-mount-import.md](README-mount-import.md)
 
 *EXTRA:* a small macOS SwiftUI companion app named **Mount Import Assistant** for the same mounted-share import workflow. Use the app or the portable shell scripts.
+
+For endpoint planning, use the FASTEST local path first: prefer the fastest reachable local network such as `10GbE`, fall back to slower local paths such as `1GbE`, and use VPN/WireGuard/Tailscale addresses as remote reachability or fallback paths unless a device is intentionally VPN-only.
 
 External inventory handoff files are here:
 

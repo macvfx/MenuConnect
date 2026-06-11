@@ -69,6 +69,24 @@ mount | ./mount_to_smbconnect_config.sh \
 
 If you want the script to prompt for speeds, omit `--non-interactive`. When input is piped from `mount`, prompts are read from the terminal instead of from the pipe.
 
+## FASTEST Local vs VPN Strategy
+
+SMB Connect chooses between configured endpoints by reachability and priority. Treat fast and slow local networks as speed preferences, and treat VPN addresses as remote reachability or fallback paths.
+
+- `10g` is the preferred local storage path when the Mac is on the fast production or storage network.
+- `1g` is the local fallback path when the Mac is still on-site but not on the fastest network.
+- VPN, WireGuard, Tailscale, or other tunnel addresses are remote reachability paths. In the portable script, mark these as `custom` unless your SMB Connect config uses another explicit custom label later.
+
+A VPN address may be reachable from almost anywhere, but that does not mean it should win over a local storage network. If the Mac is on 10GbE beside the server, SMB Connect should prefer the 10GbE endpoint. If the Mac is off-site or only has tunnel reachability, the VPN endpoint becomes the useful fallback.
+
+The default planning order is:
+
+1. Prefer the fastest local endpoint, such as `10g`.
+2. Fall back to slower local endpoints, such as `1g`.
+3. Use VPN/custom endpoints when the Mac is remote or only the tunnel address is reachable.
+
+If a device is intended to work only over VPN, review the generated endpoint priorities after import and adjust that device-specific config in SMB Connect.
+
 ## Preferred And Fallback Paths
 
 SMB Connect needs endpoint speeds so it can choose preferred and fallback paths. The script supports two modes:

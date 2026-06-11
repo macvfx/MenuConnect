@@ -50,4 +50,4 @@ Use these fields from the site/device list:
 | `server 1GbE IP` | `1GbE IP` |
 | `server role`, `office or region`, `site notes` | `note` |
 
-WireGuard and Tailscale addresses are useful for planning and support, but the current generator template only creates one preferred path and one fallback path. If a VPN path should be used as the fallback SMB address, put that VPN IP into the fallback IP column and set the fallback speed to `custom`.
+WireGuard and Tailscale addresses are useful for planning and support. For SMB Connect imports, prefer the fastest local server IP first, use slower local IPs as fallback, and use VPN/WireGuard/Tailscale addresses as remote reachability paths. If a VPN path should be used as an SMB fallback endpoint, put that VPN IP into the fallback IP column and set the fallback speed to `custom`.

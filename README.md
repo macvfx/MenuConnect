@@ -49,7 +49,7 @@ Generator usage is documented here:
 - [README-config-generator.md](README-config-generator.md)
 - [README-mount-import.md](README-mount-import.md)
 
-*EXTRA:* a small macOS SwiftUI companion app named **Mount Import Assistant** for the same mounted-share import workflow. Use the app or the portable shell scripts. 
+*EXTRA:* a small macOS SwiftUI companion app named **Mount Import Assistant** for the same mounted-share import workflow. Use the app or the portable shell scripts.
 
 External inventory handoff files are here:
 

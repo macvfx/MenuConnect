@@ -4,6 +4,8 @@ Use [mount_to_smbconnect_config.sh](mount_to_smbconnect_config.sh) to turn raw m
 
 This is useful when someone already has SMB shares mounted and you want to bootstrap an import config from the mounted SMB URLs.
 
+The private SMB Connect repository also has a macOS SwiftUI companion app named Mount Import Assistant that runs the same kind of mounted-share import locally and exports JSON plus review files. This public repo keeps the shareable workflow to shell scripts, docs, templates, and examples only; no Swift project files are published here.
+
 ## Input
 
 Capture mount output from the Mac that has the shares mounted:

@@ -18,8 +18,8 @@ Usage:
 Description:
   Reads raw macOS `mount` output, finds SMB mounts, and creates an SMB Connect
   setup JSON file. The script groups mounted shares by SMB share name and base
-  /Volumes mount name, strips Finder duplicate suffixes such as -1 for grouping,
-  and adds one endpoint for each detected server IP.
+  /Volumes mount name, treats Finder duplicate suffixes such as -1 as broken
+  extra mounts for grouping, and adds one endpoint for each detected server IP.
 
 Notes:
   - Speeds must be one of: 100g, 40g, 25g, 10g, 5g, 2.5g, 1g, custom.

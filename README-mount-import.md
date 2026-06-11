@@ -91,10 +91,10 @@ The script writes a report next to the JSON. Review the report before importing.
 It calls out:
 
 - the same share mounted from multiple server IPs
-- Finder-style duplicate mount paths such as `/Volumes/Archives-1`
+- Finder-style duplicate mount paths such as `/Volumes/Archives-1`, treated as broken extra mounts and grouped under the base mount name
 - the same share appearing as multiple mounted volume names
 
-These warnings are important because they may indicate the Mac has both preferred and fallback paths mounted, or that Finder created a duplicate `-1` mount.
+These warnings are important because they may indicate the Mac has both preferred and fallback paths mounted, or that Finder created a duplicate `-1` or `-2` mount. In the generated JSON, duplicate suffix mounts are grouped under the base mount name.
 
 ## Usernames
 

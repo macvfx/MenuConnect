@@ -17,6 +17,7 @@ It is designed for environments where users regularly connect to multiple storag
 - Mounts SMB shares through macOS using stored user credentials
 - Shows connection state in the menu bar popover with per-share status cards
 - Connects all ready shares in one click (`Connect All`, `⌘K`) or automatically on app start
+- Auto-reconnects dropped shares when the server is still reachable, with stale mount cleanup and a 60-second cooldown
 - Detects duplicate mounts such as `Video` and `Video-1`
 - Detects `/Volumes` name conflicts before mounting and blocks risky connects
 - Exports and imports JSON configuration files

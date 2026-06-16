@@ -45,11 +45,13 @@ The generator script is here:
 
 - [generate_smbconnect_config.sh](generate_smbconnect_config.sh)
 - [mount_to_smbconnect_config.sh](mount_to_smbconnect_config.sh)
+- [json_to_mobileconfig.sh](json_to_mobileconfig.sh) — convert an existing setup JSON into an MDM `.mobileconfig`
 
 Generator usage is documented here:
 
 - [README-config-generator.md](README-config-generator.md)
 - [README-mount-import.md](README-mount-import.md)
+- [README-json-to-mobileconfig.md](README-json-to-mobileconfig.md)
 
 *EXTRA:* a small macOS SwiftUI companion app named **Mount Import Assistant** for the same mounted-share import workflow. Use the app or the portable shell scripts.
 

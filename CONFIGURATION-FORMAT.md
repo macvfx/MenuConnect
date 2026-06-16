@@ -118,6 +118,34 @@ Full generator usage details are documented in:
 
 - [README-config-generator.md](README-config-generator.md)
 
+### Converting An Existing JSON To An MDM Profile
+
+If you already have a setup JSON file (exported from the app, hand-written, or
+produced by another script) and only need the matching `.mobileconfig`, use:
+
+- [json_to_mobileconfig.sh](json_to_mobileconfig.sh)
+
+```bash
+./json_to_mobileconfig.sh \
+  -i ./SMBConnectSetup-AVNAS.json \
+  -o ./SMBConnectSetup-AVNAS.mobileconfig \
+  --organization "Your Org"
+```
+
+Key options:
+
+- `--allow-user-defined true|false` — `true` (default) keeps each user's own
+  imported shares and merges the managed ones on top; `false` locks the app to
+  only the managed shares.
+- `--blank-username` — emit the managed shares with an empty `defaultUsername`
+  so each user supplies their own.
+
+It applies the JSON → MDM key mapping described in
+[Key Name Reference: JSON vs MDM](#key-name-reference-json-vs-mdm) (notably
+`connectionProtocol` → `protocol`, and dropping `source`). Full usage:
+
+- [README-json-to-mobileconfig.md](README-json-to-mobileconfig.md)
+
 ---
 
 ## MDM Profile Format

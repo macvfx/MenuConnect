@@ -245,6 +245,12 @@ Examples and usage details are here:
 
 - [Config Generator README](README-config-generator.md)
 
+If you already have a setup JSON and only need the matching MDM profile, convert
+it directly:
+
+- [json_to_mobileconfig.sh](json_to_mobileconfig.sh)
+- [JSON → Profile README](README-json-to-mobileconfig.md)
+
 ### Share Settings
 
 This section defines the core share identity.
@@ -351,13 +357,34 @@ This is useful when IT wants to push:
 
 The user can still enter and store their own password locally in Keychain.
 
+You can build the profile directly from a setup JSON with
+[json_to_mobileconfig.sh](json_to_mobileconfig.sh). Two options shape how it
+behaves on the user's Mac:
+
+- `--allow-user-defined true|false` — with `true` (the default) a deployed
+  profile **keeps** each user's own imported shares and merges the managed ones
+  on top, so pushing a profile does not wipe a user's existing setup. With
+  `false`, the app shows only the managed shares.
+- `--blank-username` — leave each managed share's `defaultUsername` empty so
+  every user enters their own. Without it, the username from the JSON is baked
+  into the profile and is identical (and locked) for all users on the device.
+
+Passwords are never written to the profile. Full usage:
+
+- [JSON → Profile README](README-json-to-mobileconfig.md)
+
 ## Recommended Admin Workflow
 
 1. Create share definitions in JSON or MDM.
 2. Preload alias, share name, mount name, and preferred/fallback IPs.
-3. Optionally preload a default username.
-4. Let the user open the app and save their password locally in Keychain.
-5. Have the user connect from the menu bar app.
+3. Optionally preload a default username, or use `--blank-username` so each user
+   supplies their own.
+4. To deploy by MDM, convert the JSON with
+   [json_to_mobileconfig.sh](json_to_mobileconfig.sh) (or generate the profile
+   directly). Keep `--allow-user-defined true` unless you want to lock users to
+   only the managed shares.
+5. Let the user open the app and save their password locally in Keychain.
+6. Have the user connect from the menu bar app.
 
 ## Recommended User Workflow
 

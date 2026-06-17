@@ -230,6 +230,8 @@ Passwords are saved locally in the user's Keychain after the user enters them in
 
 Usernames can be preloaded via `defaultUsername`. This lets admins pre-fill the expected account name without ever touching the password.
 
+For a managed (MDM) share, the username and password are entered by the user in Settings → Credentials and stored in Keychain keyed by the share's stable id. This requires app v0.5.2 or later: earlier builds regenerated the managed share's id on every refresh, orphaning those Keychain entries and blanking the credential fields during entry.
+
 ---
 
 ## Export Behaviour

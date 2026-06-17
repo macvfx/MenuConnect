@@ -373,6 +373,21 @@ Passwords are never written to the profile. Full usage:
 
 - [JSON → Profile README](README-json-to-mobileconfig.md)
 
+### Entering Credentials For A Managed Share
+
+A managed share is preloaded read-only, but its username and password are not
+part of the profile. To finish setup, open `Settings…`, select the managed
+share, and enter the username and password in the `Credentials` section — they
+are saved to the user's Keychain and reused on every connect.
+
+> **Requires app v0.5.2 or later.** Earlier builds regenerated a managed share's
+> internal identity on every refresh (about every 20 seconds), which reset the
+> Settings selection and blanked the credential fields as you typed, and
+> prevented saved credentials from being reloaded. v0.5.2 gives managed shares a
+> stable identity so credentials can be entered once and persist. If you deployed
+> an earlier build, install v0.5.2 and re-enter the credentials once; the profile
+> itself does not need to be redeployed.
+
 ## Recommended Admin Workflow
 
 1. Create share definitions in JSON or MDM.

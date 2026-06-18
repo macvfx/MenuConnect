@@ -6,6 +6,7 @@ SMB Connect is a macOS menu bar app for mounting SMB shares with awareness of pr
 
 It is designed for environments where users regularly connect to multiple storage targets and need the app to:
 
+- *FIXED* v0.5.3 (build 12) shows a readable "Authentication failed" message instead of `Mount failed (error 80)` when a credential is rejected, keeps startup auto-connect quiet (failures show on the footer status line instead of a modal alert), and pins the popup header and `Quit` button so the title and buttons are never clipped — only the summary and shares list scroll.
 - *FIXED* v0.5.3 stops a false `Mounted Wrong` / duplicate state caused by macOS system and autofs volumes (for example the `auto_home` map named `home`) matching a configured share such as `Home`, and posts a quiet macOS notification when a share genuinely needs attention. The app version is also shown in the popup (next to `Quit`) and in the bottom-left of the Settings window.
 - *FIXED* v0.5.2 gives MDM-managed shares a stable identity so usernames and passwords can be entered once and persist, and adds `json_to_mobileconfig.sh` to convert a setup JSON into a profile.
 - *NEW* v0.5.0 auto-reconnects dropped shares when the server is still reachable, with stale mount cleanup and a 60-second cooldown.

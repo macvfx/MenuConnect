@@ -25,6 +25,8 @@ The popover shows:
 - `Refresh`, `Connect All`, `Settings`, and `Quit` actions at the bottom
 - the app version next to the `Quit` button for a quick peek (also shown, with build number, in the bottom-left of the Settings window)
 
+The top banner and the bottom action row (including `Quit`) stay pinned in place. Only the `Connection Summary` and `Shares` sections scroll, so the title and buttons remain visible no matter how many shares you have configured.
+
 ### 2. Read The Connection Summary
 
 The `Connection Summary` section gives a quick count of:
@@ -429,6 +431,19 @@ Check:
 - whether the preferred or fallback network is actually active
 - whether credentials were saved in Keychain
 - whether the target SMB server is reachable
+
+### `Authentication failed` (Previously `Mount failed (error 80)`)
+
+This means the SMB server rejected the username or password for that share. macOS reports this as error `80` (`EAUTH`); from v0.5.3 build 12 the app shows the clearer "Authentication failed. Check the username and password in Settings." message instead of the raw code.
+
+To fix it:
+
+1. Open `Settings…` and select the share.
+2. Re-enter the `Username` and `Password` in the `Credentials` section and `Save Credentials`.
+3. Confirm the account exists on the server and has access to that share.
+4. Return to the menu bar app and connect again.
+
+If `Connect all shares on start` is enabled and a credential is wrong, the failure now appears quietly on the status line above the buttons rather than as a pop-up alert, so it will not interrupt you when the menu opens. Connect the share manually after fixing the credential to see the detailed message.
 
 ### The App Says `Volume Name Conflict`
 

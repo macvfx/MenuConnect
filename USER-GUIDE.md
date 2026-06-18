@@ -23,6 +23,7 @@ The popover shows:
 - a `Connection Summary` section
 - a `Shares` section with one status card per configured share
 - `Refresh`, `Connect All`, `Settings`, and `Quit` actions at the bottom
+- the app version next to the `Quit` button for a quick peek (also shown, with build number, in the bottom-left of the Settings window)
 
 ### 2. Read The Connection Summary
 
@@ -128,6 +129,12 @@ The app has detected multiple mounted instances such as:
 - `Video-1`
 
 This is a warning condition and should usually be repaired before continuing work.
+
+Mount detection only looks at genuine network shares mounted under `/Volumes`. macOS system and automounted volumes — such as the `auto_home` map that appears as a non-local volume literally named `home` at `/System/Volumes/Data/home` — are ignored, so a share whose name matches a system volume (for example a share called `Home`) no longer shows a false `Mounted Wrong` or duplicate state.
+
+### Notifications
+
+When a share *newly* enters an attention state — a genuine duplicate, a wrong-path mount, or a `/Volumes` name conflict — SMB Connect posts a single, quiet macOS notification so you are told without having to open the popover. macOS asks for notification permission the first time the app runs; you can change it later in System Settings → Notifications → SMB Connect.
 
 ### Volume Name Conflict
 
@@ -436,3 +443,5 @@ Use the repair workflow or manually disconnect all matching mounts and reconnect
 ### The Share Mounted On The Wrong Network
 
 If the app says the share is on a fallback or slower path, use the repair flow to disconnect and reconnect on the preferred network when available.
+
+> **Fixed in v0.5.3.** Earlier builds (v0.5.1 and v0.5.2) could falsely report `Mounted Wrong` or a duplicate for a share whose name matched a macOS system/autofs volume — most commonly a share called `Home`, which collided with the built-in `auto_home` volume named `home` — even though there was no real mount and no `-1` volume in `/Volumes`. v0.5.3 restricts detection to genuine network shares under `/Volumes`. If you saw this, install v0.5.3 and press `Refresh`.

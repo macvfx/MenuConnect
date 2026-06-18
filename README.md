@@ -1,11 +1,12 @@
 # SMB Connect
 
-`v0.5.2` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
+`v0.5.3` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
 
 SMB Connect is a macOS menu bar app for mounting SMB shares with awareness of preferred, fallback, and remote-reachability network paths such as `10GbE`, `1GbE`, `25GbE`, `100GbE`, and VPN/custom endpoints.
 
 It is designed for environments where users regularly connect to multiple storage targets and need the app to:
 
+- *FIXED* v0.5.3 stops a false `Mounted Wrong` / duplicate state caused by macOS system and autofs volumes (for example the `auto_home` map named `home`) matching a configured share such as `Home`, and posts a quiet macOS notification when a share genuinely needs attention. The app version is also shown in the popup (next to `Quit`) and in the bottom-left of the Settings window.
 - *FIXED* v0.5.2 gives MDM-managed shares a stable identity so usernames and passwords can be entered once and persist, and adds `json_to_mobileconfig.sh` to convert a setup JSON into a profile.
 - *NEW* v0.5.0 auto-reconnects dropped shares when the server is still reachable, with stale mount cleanup and a 60-second cooldown.
 - *FIXED* v0.5.1 removes main-thread publishing warnings in the mount service.
@@ -20,6 +21,8 @@ It is designed for environments where users regularly connect to multiple storag
 - Connects all ready shares in one click (`Connect All`, `⌘K`) or automatically on app start
 - Auto-reconnects dropped shares when the server is still reachable, with stale mount cleanup and a 60-second cooldown
 - Detects duplicate mounts such as `Video` and `Video-1`
+- Limits mount detection to genuine network shares under `/Volumes`, so macOS system and autofs volumes (for example the `auto_home` map named `home`) no longer trigger a false "Mounted Wrong" / duplicate state
+- Posts a quiet macOS notification when a share newly needs attention, instead of relying on the popup alone
 - Detects `/Volumes` name conflicts before mounting and blocks risky connects
 - Exports and imports JSON configuration files
 - Reads managed share definitions from an MDM profile

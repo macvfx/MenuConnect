@@ -1,11 +1,12 @@
 # SMB Connect
 
-`v0.5.3` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
+`v0.5.4` · `macOS 14+` · `SwiftUI` · `Menu Bar Utility`
 
 SMB Connect is a macOS menu bar app for mounting SMB shares with awareness of preferred, fallback, and remote-reachability network paths such as `10GbE`, `1GbE`, `25GbE`, `100GbE`, and VPN/custom endpoints.
 
 It is designed for environments where users regularly connect to multiple storage targets and need the app to:
 
+- *FIXED* v0.5.4 (build 13) connects to shares that are reachable only over a VPN or routed network (WireGuard, Tailscale, corporate, inter-VLAN). Endpoint selection no longer requires the server IP to be on a local subnet — it keeps subnet matching as a fast path, then falls back to probing every configured endpoint and connects to whichever answers on SMB (TCP port 445). Connections made over a routed path are tagged `(via VPN)` in the status detail.
 - *FIXED* v0.5.3 (build 12) shows a readable "Authentication failed" message instead of `Mount failed (error 80)` when a credential is rejected, keeps startup auto-connect quiet (failures show on the footer status line instead of a modal alert), and pins the popup header and `Quit` button so the title and buttons are never clipped — only the summary and shares list scroll.
 - *FIXED* v0.5.3 stops a false `Mounted Wrong` / duplicate state caused by macOS system and autofs volumes (for example the `auto_home` map named `home`) matching a configured share such as `Home`, and posts a quiet macOS notification when a share genuinely needs attention. The app version is also shown in the popup (next to `Quit`) and in the bottom-left of the Settings window.
 - *FIXED* v0.5.2 gives MDM-managed shares a stable identity so usernames and passwords can be entered once and persist, and adds `json_to_mobileconfig.sh` to convert a setup JSON into a profile.
@@ -16,7 +17,7 @@ It is designed for environments where users regularly connect to multiple storag
 ## What The App Does
 
 - Configures shares by alias, share name, mount name, and one or more IP-based network paths
-- Detects active local networks and selects the best reachable configured path
+- Detects active local networks and selects the best reachable configured path, including endpoints reachable only over a VPN or routed network (tagged `(via VPN)`)
 - Mounts SMB shares through macOS using stored user credentials
 - Shows connection state in the menu bar popover with per-share status cards
 - Connects all ready shares in one click (`Connect All`, `⌘K`) or automatically on app start

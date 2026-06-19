@@ -302,6 +302,8 @@ For each network path, the app shows:
 
 Lower priority numbers are preferred first.
 
+**Reachability over VPN.** SMB Connect prefers an endpoint whose `Server IP` is on the same subnet as one of your Mac's local interfaces (your fast local path). If none of those respond, it then tries every other configured endpoint and connects to whichever actually answers on SMB (TCP port 445). This means a share reachable only through a VPN — WireGuard, Tailscale, a corporate tunnel, or a routed/inter-VLAN path — connects normally even though your `utun` address is on a different subnet than the NAS. When a connection is made over such a routed path, the status detail tags it `(via VPN)`, for example `Current network: 1GbE · 192.168.1.50 (via VPN)`, so an over-the-tunnel connection is always visible.
+
 ### Credentials
 
 This section stores the user’s login details in Keychain.
